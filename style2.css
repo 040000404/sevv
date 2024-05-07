@@ -1,5 +1,4 @@
- 
-
+  
 *,
 *::before,
 *::after {
@@ -14,8 +13,8 @@
 html, body{
   height:  100%;
   /*background-color: *//*RGB(213, 210, 210); *//*#d4ccc9;*/
-  background-color: #F8F8F9;
-  filter: saturate(66%);
+  background-color: #2e3192;
+  filter: saturate(30%);
   overflow: hidden;
     -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
@@ -61,7 +60,7 @@ mobile{
  	opacity: 0.5;
  	transition: all 1s ease-in-out;
  	border-radius: 5px;
- 	box-shadow: 0 0 2px 2px #050012 inset; 
+ 	/*box-shadow: 0 0 2px 2px #050012 inset; */
 } 
 #index_en:hover{
  	background: palevioletred;  
@@ -133,9 +132,14 @@ mobile{
 /*index.html*/
 
 #tape {
-	width: 200px; 
-	margin-top: 32px;
+	width: 285px; 
+	margin-top: 2px;
+	margin-left: -35px;
 }
+#sevv001 {
+	width: 285px; 
+	margin-top: 2px; 
+ }
  
 .content{
 	width: 483px;
@@ -201,38 +205,34 @@ layer{
 .nightbox{
 	/*color: #afa371;*/
 	/*box-shadow: 1px 1px 1px #afa371;*/
-}
-default p{
-	font-size: 10pt;
-	font-family: Times;
-	line-height: 2;
-	position: relative;
-	width: 350px;
-	transform: translateX(-50%);
-	left:  50%;
-	text-align: left;
-	letter-spacing: 1px; 
-	padding:  15px 0px;
-
-}
+} 
 
 #mags{
-	/*width: 322px;*/  
+	width: 341.6px;
 	height:  483px;
 	/*margin: 118px 0px;*/
 	transform: translateX(-50%);
 	left:  50%;
 	position: relative;
-	background-size: cover; 
 	overflow-y: visible;
-
-
+	background: url('images/bg.png') ;
+	background-size: 341.6px 483px;
+	background-repeat: no-repeat;  
  }
-   
-#mags p{
-	text-align: center;
-	color: blue;
-} 
+
+ #mags2{
+	width: 341.6px;
+	height:  483px;
+	/*margin: 118px 0px;*/
+	transform: translateX(-50%);
+	left:  50%;
+	position: relative;
+	overflow-y: visible;
+	background: url('images/bg2.png') ;
+	background-size: 341.6px 483px;
+	background-repeat: no-repeat; 
+ }
+    
  
   
  #column_index{
@@ -271,78 +271,12 @@ default p{
   font-size: 9pt;
  	text-align: center; 
 
- } 
-.text_puzzle_day{
- 	background: url('room_day_c.png');
-	background-size:  483px 483px;
-	background-position: center 199px;
-	filter: saturate(40%);
- 
- }
- .text_puzzle_night{
-
- 	background: url('room_night_c.png');
-	background-size:  483px 483px;
-	background-position: center 199px;
+ }  
   
- }
- .puzzle_piece:hover{ 
- 	background: rgba(200,200,200,0.5);
-
- }
-
-
-.room_top_day{
-  filter: saturate(50%) blur(1px);
- 	background: url('room_day_c.png');
-	background-size:  483px 483px;
-	background-position:top center ;
- 
- }
- .room_top_night{
-
- 	background: url('room_night_c.png');
-	background-size:  483px 483px;
-	background-position:top center ;
-	filter:   blur(1px)
- 
- }
- .room_left_day{
-
- 	background: url('room_day_c.png');
-	background-size:  483px 483px;
-	background-position: center left;
-	filter: saturate(50%) blur(1px);
- 
- }
- .room_left_night{
-
- 	background: url('room_night_c.png');
-	background-size:  483px 483px;
-	background-position: center left;
-	filter:   blur(1px)
- 
- }
- .room_right_day{
-
- 	background: url('room_day_c.png');
-	background-size:  483px 483px;
-	background-position: center right;
-	filter: saturate(20%) blur(1px);
- 
- }
- .room_right_night{
-
- 	background: url('room_night_c.png');
-	background-size:  483px 483px;
-	background-position: center right;
-	filter:   blur(1px);
- 
- }
  .dayimage{ 
 	background: white;
- box-shadow:  /* 0px 0px 10px 10px RGBA(35, 39, 42,0.2) inset, */0px 0 20px 20px RGBA(241, 241, 243,0.5) inset;
- 
+/*  box-shadow:    0px 0 20px 20px RGBA(241, 241, 243,0.1) inset;
+*/ 
  }  
 
   
@@ -351,39 +285,251 @@ default p{
   	display: flex;
   	flex-direction: column;
   	align-self: center;
-  	justify-content: center;
+  	justify-content: start;
+  	padding-top: 50px;
   }
 
 #tracklist{
 		display: flex;
   	flex-direction: row;
+   	width: 95%;
+  	align-self: center; 
+  	margin-top: 20px;
 }
 #tracklist ul{
   	list-style-type: none;
-  	font-family: times;
+  	font-family: arial;
   	flex: auto;
-  	align-self: center;
+  	text-align: left; 
+  	font-size: 9pt;
+  	margin-top: 2px;
 
   }
 #tracklist ul li{
-	margin-bottom: 8px;
+	margin: 5px;
+	padding-top: 2px;
+	margin-left: 12px;
+	padding-bottom: 11px;
+
 }  
 
 #artists{
-	 align-self: flex-start;
+	align-self: flex-start;
+	color: #2E3192;
+	text-shadow:   1px 1px 1px   #fff;
+	justify-self: center;
+	width: 50%;
+
+} 
+
+#artists img{
+	height: 32px;
+	margin-left: 5px;
+	display: flex;
+	flex-direction: column;
+		justify-self: center;
+
 }
-audio{
-		align-self: center;
-		margin-bottom: 32px;
+#runningtime{
+ 	color: #2E3192;
+ 	font-size: 11pt;
+ 	font-family: arial;
+
+} 
+  
+
+.audio-player {
+	position: relative;
+	width: 95%;
+  height: 40px; 
+  margin-bottom: 24px;
+  background: rgba(255,255,255,0.4); 
+	align-self: center;
+  font-family: arial;
+  color:  #2E3192;
+  font-size: 0.75em;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: 6px auto;
+  .timeline {
+    background: #2E3192;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 2px 10px 0 #0008;
+    .progress {
+      background: rgba(255,255,255,.6);
+      width: 0%;
+      height: 100%;
+      transition: 0.25s;
+    }
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0 20px;
+
+    > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .toggle-play {
+      &.play {
+        cursor: pointer;
+        position: relative;
+        left: 0;
+        height: 0;
+        width: 0;
+        border: 7px solid #0000;
+        border-left: 13px solid #2E3192;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+      &.pause {
+        height: 15px;
+        width: 20px;
+        cursor: pointer;
+        position: relative;
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0px;
+          background: #2E3192;
+          content: "";
+          height: 15px;
+          width: 3px;
+        }
+        &:after {
+          position: absolute;
+          top: 0;
+          right: 8px;
+          background: #2E3192;
+          content: "";
+          height: 15px;
+          width: 3px;
+        }
+        &:hover {
+         }
+      }
+    }
+    .time {
+      display: flex;
+
+      > * {
+        padding: 2px;
+      }
+    }
+    .volume-container {
+      cursor: pointer;
+      .volume-button {
+        height: 26px;
+        display: flex;
+        align-items: center;
+        .volume {
+          transform: scale(0.7);
+        }
+      }
+
+      position: relative;
+      z-index: 2;
+      .volume-slider {
+        position: absolute;
+        left: -3px;
+        top: 15px;
+        z-index: -1;
+        width: 0;
+        height: 15px;
+        background: #2E3192;
+        box-shadow: 0 0 20px #000a;
+        transition: 0.25s;
+        .volume-percentage {
+          background: #D5FFCB;
+          height: 100%;
+          width: 75%;
+        }
+      }
+      &:hover {
+        .volume-slider {
+          left: -123px;
+          width: 120px;
+        }
+      }
+    }
+  }
+}
+
+#credit{
+	font-size: 8pt;
+	width: 95%;
+	text-decoration: none;
+	color:#2E3192;
+ 	display: flex;
+	flex-direction: row;
+	align-self: center;
+}
+#null{
+	width: 50%;
+
+}
+#creditText{
+		width: 50%;
+	background: rgba(255,255,255,.2);
+	text-align: right;
+	font-family: arial;
+	padding: 5px;
+
+}
+#sunlink{ 
+	color: red;
+}
+#sunlink:hover{
+	filter: brightness(2.5);
 }
 
 #dl-link{
-	padding: 32px;
+	position: relative;
+	top: 42px;
+ 	width: 150px;
+	align-self: center;
+	padding:3px 27px;
+	background: #D8E7AD;
+	box-shadow: 0 0 3px 4px rgba(46,49,146,0.1)   inset;
+	text-decoration: none;  
+	font-size: 11pt;
+}
+
+#tracklist-dl{
+	position: relative;
+	top: 143px;
+ 	width: 150px;
+	align-self: center;
+	padding: 3px 27px ;
+	background: #D8E7AD;
+	box-shadow: 0 0 3px 4px rgba(46,49,146,0.1)   inset;
+	text-decoration: none;  
+	font-size: 11pt;
+
+}
+
+#tracklist-dl:hover{
+		box-shadow: 0 0 5px 7px rgba(46,49,146,0.2) inset;
+
+}
+#dl-link:hover{
+		box-shadow: 0 0 5px 7px rgba(46,49,146,0.2) inset;
+
+}
+
+#tape:hover{
+	filter: saturate(1555%) brightness(1.2);
 }
 /*mobile*/
 @media ( max-width: 414px ) {
-	body{
-		background: #F8F8F9;
+	body{ 
 	}
    
 }
