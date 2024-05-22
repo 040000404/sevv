@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEVV</title>
+  <link rel="stylesheet" href="style2.css">
+
+  <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
+
+
+ 
+</head>
+<body>
+    <div class="content">
+      <div class="top">
+          <a href="http://instagram.com/sevv.up" >
+            <img id="sevv_ig" src="images/logo.png" >
+          </a> 
+          <div id="names">
+            <img id="collective" src="images/purin.png"> 
+            <a href="dgg.html">
+              <img id="name" src="images/dgg.png">
+            </a>
+            <a href="june.html">
+              <img id="name" src="images/june.png">
+            </a>
+            <a href="thk.html">
+              <img id="name" src="images/thk.png">
+            </a>
+            <a href="aa.html">
+              <img id="name" src="images/aa.png">
+            </a>
+
+            <img id="collective" src="images/sorrow.png"> 
+            <a href="yuchi.html">
+            <img id="name" src="images/yuchi.png">
+            </a>
+            <a href="joyul.html">
+            <img id="name" src="images/joyul.png">
+            </a>
+            <a href="y2k.html">
+            <img id="name" src="images/y2k.png">
+            </a> 
+          </div>
+      </div>
+      <div class="mid_play"> 
+        
+        <img id="sevv_ig" src="images/logo.png" style="visibility: hidden;"> 
+        <p id="credit">Live Presented by &nbsp;&nbsp;</p>
+       <!--  <img id="credit" src="images/sun.png"> -->
+        <a href="http://instagram.com/sun.collaboration">
+          <p id="credit" class="sunlink">SUN  &nbsp;  Lime Studio, </p>
+         </a> 
+        <p id="credit">&nbsp;&nbsp;2024-05-11&nbsp;&nbsp;</p>
+          <!-- <img id="credit" src="images/sun3.png"> -->
+        <a href="http://google.com">
+          <img class="get" src="images/mp3.png">
+        </a> 
+      </div>
+       <div class="audio-player">
+        <div class="timeline">
+          <div class="progress"></div>
+        </div>
+        <div class="controls">
+          <div class="play-container">
+            <div class="toggle-play play">
+            </div>
+          </div>
+          <div class="time">
+            <div class="current">0:00</div>
+            <div class="divider">/</div>
+            <div class="length"></div>
+          </div>
+          <div class="name">Joyul</div>
+<!--     credit for icon to https://saeedalipoor.github.io/icono/ -->
+          <div class="volume-container">
+            <div class="volume-button">
+              <div class="volume icono-volumeMedium"></div>
+            </div>
+      
+            <div class="volume-slider">
+              <div class="volume-percentage"></div>
+            </div>
+          </div>
+        </div>
+      </div> 
+      </div>
+
+ 
+  <script>  
+    
+const audioPlayer = document.querySelector(".audio-player");
+const audio = new Audio(
+  "media/joyul.wav"
+);
+//credit for song: Adrian kreativaweb@gmail.com
+
+console.dir(audio);
+
+audio.addEventListener(
+  "loadeddata",
+  () => {
+    audioPlayer.querySelector(".time .length").textContent = getTimeCodeFromNum(
+      audio.duration
+    );
+    audio.volume = .75;
+  },
+  false
+);
+
+//click on timeline to skip around
+const timeline = audioPlayer.querySelector(".timeline");
+timeline.addEventListener("click", e => {
+  const timelineWidth = window.getComputedStyle(timeline).width;
+  const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
+  audio.currentTime = timeToSeek;
+}, false);
+
+//click volume slider to change volume
+const volumeSlider = audioPlayer.querySelector(".controls .volume-slider");
+volumeSlider.addEventListener('click', e => {
+  const sliderWidth = window.getComputedStyle(volumeSlider).width;
+  const newVolume = e.offsetX / parseInt(sliderWidth);
+  audio.volume = newVolume;
+  audioPlayer.querySelector(".controls .volume-percentage").style.width = newVolume * 100 + '%';
+}, false)
+
+//check audio percentage and update time accordingly
+setInterval(() => {
+  const progressBar = audioPlayer.querySelector(".progress");
+  progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
+  audioPlayer.querySelector(".time .current").textContent = getTimeCodeFromNum(
+    audio.currentTime
+  );
+}, 500);
+
+//toggle between playing and pausing on button click
+const playBtn = audioPlayer.querySelector(".controls .toggle-play");
+playBtn.addEventListener(
+  "click",
+  () => {
+    if (audio.paused) {
+      playBtn.classList.remove("play");
+      playBtn.classList.add("pause");
+      audio.play();
+    } else {
+      playBtn.classList.remove("pause");
+      playBtn.classList.add("play");
+      audio.pause();
+    }
+  },
+  false
+);
+
+audioPlayer.querySelector(".volume-button").addEventListener("click", () => {
+  const volumeEl = audioPlayer.querySelector(".volume-container .volume");
+  audio.muted = !audio.muted;
+  if (audio.muted) {
+    volumeEl.classList.remove("icono-volumeMedium");
+    volumeEl.classList.add("icono-volumeMute");
+  } else {
+    volumeEl.classList.add("icono-volumeMedium");
+    volumeEl.classList.remove("icono-volumeMute");
+  }
+});
+
+//turn 128 seconds into 2:08
+function getTimeCodeFromNum(num) {
+  let seconds = parseInt(num);
+  let minutes = parseInt(seconds / 60);
+  seconds -= minutes * 60;
+  const hours = parseInt(minutes / 60);
+  minutes -= hours * 60;
+
+  if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+  return `${String(hours).padStart(2, 0)}:${minutes}:${String(
+    seconds % 60
+  ).padStart(2, 0)}`;
+}
+
+  </script> 
+</body>
+</html>
